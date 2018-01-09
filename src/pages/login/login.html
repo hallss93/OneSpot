@@ -1,0 +1,43 @@
+<ion-content>
+  
+   <div padding  id="cloud-layer">
+  
+     <ion-row>
+       <ion-col style="text-align:center;">
+          <ion-label floating><div class="point">.</div><span class="onespot">OneSpot</span></ion-label>
+       </ion-col>
+     </ion-row>
+  
+     <ion-row>
+       <ion-col>
+         <ion-list inset >
+          <ion-item>
+            <ion-label floating>Usuário do Spotify</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario"></ion-input>
+          </ion-item>
+  
+           <ion-item>
+             <ion-label floating>Senha</ion-label>
+             <ion-input type="password"  
+             [(ngModel)]="senha"></ion-input>
+           </ion-item>
+  
+         </ion-list>
+       </ion-col>
+     </ion-row>
+  
+    <ion-row>
+      <ion-col>
+        <button (click)="login()" ion-button class="login-button" >LOGIN</button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button (click)="facebook()" ion-button class="facebook-button" >LOGAR COM FACEBOOK</button>
+      </ion-col>
+    </ion-row>
+  
+   </div>
+  
+ </ion-content>

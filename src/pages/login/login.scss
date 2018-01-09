@@ -1,0 +1,75 @@
+.ios, .md {
+    
+     page-login {
+    
+       .scroll-content {
+         background: linear-gradient(#c26bd3, #620c74);
+         display: flex;
+         flex-direction: column;
+         overflow: hidden;
+       }
+    
+       img {
+         padding: 30% 0 20% 0;
+         width: 70%;
+         height: auto;
+         margin: 0 auto;
+       }
+       .point{
+           font-size: 80px;
+           height: 20px;
+           width: 20px;
+           border-radius: 50%;
+           background: rgb(109,57,120);
+           vertical-align: middle;
+           display: inline-block;
+           color: #ccc;
+       }
+       .onespot{
+           padding-left:10px;
+           color:rgb(85,45,93);
+           font-size: 50px;
+           font-family: Optima, sans-serif;
+           font-weight: 100;
+           
+       }
+
+         ion-row {
+           align-items: center;
+           text-align: center;
+         }
+    
+         ion-item {
+            background:rgb(0,0,0);
+            background: transparent\9;
+            background:rgba(0,0,0,0);
+             opacity: 0.9;
+             border:0 0 1px 0 solid white!important;
+             font-size: 0.9em;
+         }
+    
+         ion-list {
+             margin: 0;
+         }
+         ion-label{
+             color:white!important;
+         }
+    
+         .login-button {
+            width: 100%;
+            background: rgb(167,107,180);
+            font-size: 0.9em;
+            border: none;
+            color:rgb(151,45,173);
+        }
+        .facebook-button {
+            width: 100%;
+            background: white;
+            font-size: 0.9em;
+            border: none;
+            color:rgb(151,45,173);
+        }
+    
+     }
+    
+   }
