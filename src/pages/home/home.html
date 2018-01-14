@@ -1,18 +1,54 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+      <ion-searchbar
+        [(ngModel)]="pesquisa"
+        placeholder="Busque música, álbum ou artista"
+        [showCancelButton]="true"
+        (ionInput)="getMusic($event)"
+        (ionCancel)="onCancel($event)">
+      </ion-searchbar>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <ion-list *ngIf="artistas.length>0">
+      <ion-label class="sub_title">Artistas</ion-label>
+      <div *ngFor="let a of artistas; let i=index">        
+        <ion-item [class.first]="i==0" [class.other]="i>0">
+          <ion-thumbnail item-start>
+            <img [src]="a.imagem.url">
+          </ion-thumbnail>
+          <h2>{{a.nome}}</h2>
+          <p class="white">{{a.generos}}</p>
+          <button ion-button clear item-end>></button>
+        </ion-item>
+      </div>
+    </ion-list>
+    <ion-list *ngIf="albuns.length>0">
+      <ion-label class="sub_title">Álbuns</ion-label>
+      <div (click)="getAlbum(a.id)" *ngFor="let a of albuns; let i=index">        
+        <ion-item [class.first]="i==0" [class.other]="i>0">
+          <ion-thumbnail item-start>
+            <img [src]="a.imagem.url">
+          </ion-thumbnail>
+          <h2>{{a.nome}}</h2>
+          <p class="white">{{a.artistas}}</p>
+          <button ion-button clear item-end>></button>
+        </ion-item>
+      </div>
+    </ion-list>
+    <ion-list *ngIf="musicas.length>0">
+      <ion-label class="sub_title">Músicas</ion-label>
+      <div *ngFor="let a of musicas; let i=index">        
+        <ion-item [class.first]="i==0" [class.other]="i>0">
+          <ion-thumbnail item-start>
+            <img [src]="a.album.images[0].url">
+          </ion-thumbnail>
+          <h2>{{a.nome}}</h2>
+          <p class="white">{{a.album.name}}</p>
+          <p class="white">{{a.artistas}}</p>
+          <button ion-button clear item-end>></button>
+        </ion-item>
+      </div>
+    </ion-list>
 </ion-content>

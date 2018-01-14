@@ -1,16 +1,9 @@
 import { Component } from '@angular/core';
-import { Storage } from '@ionic/storage';
-import { IonicPage, NavController, LoadingController, NavParams, ToastController } from 'ionic-angular';
-import { Http } from '@angular/http';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http,Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import { HomePage } from '../home/home';
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -18,11 +11,10 @@ import 'rxjs/add/operator/map';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  headers = new Headers()
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+  login(){
+    this.navCtrl.setRoot(HomePage);
   }
-
 }
