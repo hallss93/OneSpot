@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        .OneSpot
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="search()">
+            <ion-icon name="search"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="close()">
+            <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="fullHeight">
+      <div class="trackDiv">
+        <img [src]="track.album.images[0].url" class="track">
+      </div>
+    </div>
+    <audio-track #audio *ngFor="let track of myTracks"  [track]="track" (onFinish)="onTrackFinished($event)" >
+      <div>
+        <audio-track-progress-bar dark duration progress [audioTrack]="audio"></audio-track-progress-bar>
+        <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>
+        <div class="topIcons">
+          <ion-icon name="share" role="img" class="shareIcon icon icon-md ion-md-share"></ion-icon>
+          <ion-icon name="heart" role="img" class="likeIcon icon icon-md ion-md-heart"></ion-icon>
+        </div>
+        <img [src]="img" class="blur">
+      </div>
+      <ion-item>
+        <ion-thumbnail item-left>
+              </ion-thumbnail>
+              <div item-content style="width:100%">
+                <p><strong>{{audio.title}}</strong> ⚬ <em>{{audio.artist}}</em></p>
+              </div>
+            </ion-item>    
+          </audio-track>
+  </ion-content>
+  

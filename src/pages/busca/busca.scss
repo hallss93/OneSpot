@@ -1,0 +1,43 @@
+page-busca {
+    .toolbar-background-md {
+        background: rgb(74,74,74);
+    }
+    .scroll-content {
+        background:black;
+        padding: 0px!important;
+    }
+    ion-list{
+        background: rgb(48,48,48)!important;
+        // border:1px solid rgb(181,20,214);
+    }
+    .item-md{
+        background: rgb(74,74,74)!important;
+    }
+    .first{
+        border-top:2px solid #b514d6;
+        border-bottom: 1px solid #ccc!important;
+    }
+    .other{
+        border-bottom: 1px solid #ccc!important;
+    }
+    .white, h2{
+        color:white;
+    }
+    .item-md p{
+        font-size: 1.3rem!important;
+    }
+    .sub_title{
+        color:white;
+        padding:4px 0px 0px 16px!important;
+        margin: 13px 8px 4px 0!important;
+    }
+    .input-wrapper{
+        ion-label{
+            padding: 0px!important;
+            margin: 0px!important;
+        }
+    }
+    .list-md .item-block .item-inner {
+        border-bottom: none!important;
+    }
+}

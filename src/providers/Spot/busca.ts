@@ -8,7 +8,7 @@ export class BuscaProvider {
     token: String;
 
   constructor(public http: Http) {
-      this.token="BQAdKod-JnrMWH_0kuBHWmrUFYATxYZQ9icqngp8bpLdBHyzSxJsDoyDMOagmUPz_6QKUgHyWs1Qykb5wzQ"
+      this.token="BQCLFXVQ6iKFQeq44jcf-SmLcABzhIHB8Yw_DRwys6WUGVuWHYemLyfR45MEX9gsRqdS8G5qIJRewAYUzwA"
   }
   all = function(text){
     return axios({
@@ -18,6 +18,16 @@ export class BuscaProvider {
             "q":text,
             "type":"artist,track,album"
         },
+        headers: {
+            "Authorization":"Bearer " + this.token,
+        },
+    })
+        
+  }
+  track = function(id){
+    return axios({
+        url: 'https://api.spotify.com/v1/me/player/devices',
+        method: 'get',
         headers: {
             "Authorization":"Bearer " + this.token,
         },
